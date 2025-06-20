@@ -8,14 +8,18 @@ const deployBSTR: DeployFunction = async function (hre: HardhatRuntimeEnvironmen
   const { deployer } = await hre.getNamedAccounts();
   const { deploy, get, log } = hre.deployments;
 
-  const initialSupply = parseUnits("1000000000", 9); // 1000000 BSTR
-  // const feeReceiver = "0x02E0D53DC55F219B3B149F2FbD164Da0e5f936F8"; // Fee receiver address Main net Real Address
-  // const swapRouter = "0xYourUniswapRouterAddress"; // <- replace with real router Main net Real Address
-  // const collectors = ["0xc402DCe90308bD61eb492B1146BE0236DCcD7e13"]; // Collectors address Main net Real Address
+  // ** Test Net Constructor Args **
+  // const initialSupply = parseUnits("1000000000", 9); // 1000000 BSTR
+  // const feeReceiver = deployer; // Fee receiver Test Net address
+  // const swapRouter = "0x1689E7B1F10000AE47eBfE339a4f69dECd19F602"; // <- Test Net Router Address
+  // const collectors = ["0xd56f29b14fd266205D7B04f27e3143C118C6B809"]; // Collectors address Test Net
+  // const shares = [100]; // 100% to collectors address 
 
-  const feeReceiver = deployer; // Fee receiver address
-  const swapRouter = "0x1689E7B1F10000AE47eBfE339a4f69dECd19F602"; // <- replace with real router This is test net router
-  const collectors = ["0xd56f29b14fd266205D7B04f27e3143C118C6B809"]; // Collectors address replace with real address
+  // ** Main Net Constructor Args **
+  const initialSupply = parseUnits("1000000000", 9); // 1000000 BSTR
+  const feeReceiver = "0x02E0D53DC55F219B3B149F2FbD164Da0e5f936F8"; // Fee receiver address Main Net Real Address
+  const swapRouter = "0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24"; // <- replace with real router Main Net Real Address
+  const collectors = ["0xc402DCe90308bD61eb492B1146BE0236DCcD7e13"]; // Collectors address Main Net Real Address
   const shares = [100]; // 100% to collectors address
 
   log("🚀 Deploying BSTRToken...");
