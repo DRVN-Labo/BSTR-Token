@@ -1,4 +1,4 @@
-# 🧠 Based Buster (BSTR) Token
+# 😎 Buster (BSTR) Token
 
 ## Overview
 
